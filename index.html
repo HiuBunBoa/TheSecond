@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheSecond Admin — Trang quản trị</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">TS</div>
+      <div>
+        <div class="brand-name">TheSecond</div>
+        <div class="brand-sub">Admin Panel</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-label">Tổng quan</div>
+      <a class="nav-item active" data-page="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Dashboard
+      </a>
+      <div class="nav-label">Quản lý</div>
+      <a class="nav-item" data-page="products">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4V7Z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
+        Sản phẩm
+      </a>
+      <a class="nav-item" data-page="categories">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+        Danh mục
+      </a>
+      <a class="nav-item" data-page="orders">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6l-3-4Z"/><path d="M3 6h18M9 10a3 3 0 0 0 6 0"/></svg>
+        Đơn hàng
+      </a>
+      <a class="nav-item" data-page="customers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Khách hàng
+      </a>
+      <div class="nav-label">Báo cáo</div>
+      <a class="nav-item" data-page="stats">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+        Thống kê
+      </a>
+    </nav>
+    <div class="sidebar-foot">TheSecond Admin · v1.0<br>© 2026 Nhóm đồ án web</div>
+  </aside>
+
+  <div class="main">
+    <!-- ================= TOPBAR ================= -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburgerBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div>
+          <div class="page-title" id="pageTitle">Dashboard</div>
+        </div>
+      </div>
+      <div class="searchbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" placeholder="Tìm sản phẩm, đơn hàng, khách hàng...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          <span class="dot"></span>
+        </button>
+        <div class="admin-chip">
+          <div class="avatar">H</div>
+          <div>
+            <div class="admin-chip-name">Hân</div>
+            <div class="admin-chip-role">Quản trị viên</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ================= DASHBOARD ================= -->
+      <section class="page active" id="page-dashboard">
+        <div class="section-head">
+          <div>
+            <h2>Xin chào, Hân 👋</h2>
+            <div class="section-sub">Đây là tình hình hoạt động của TheSecond hôm nay, 12/08/2026.</div>
+          </div>
+          <button class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+            Làm mới
+          </button>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card" style="--accent:var(--blue-600); --accent-soft:var(--blue-100)">
+            <div class="stat-top">
+              <span class="stat-label">Doanh thu hôm nay</span>
+              <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+            </div>
+            <div class="stat-value">4.250.000₫</div>
+            <div class="stat-delta up">▲ 12.4% so với hôm qua</div>
+          </div>
+          <div class="stat-card" style="--accent:var(--amber-600); --accent-soft:var(--amber-100)">
+            <div class="stat-top">
+              <span class="stat-label">Đơn hàng mới</span>
+              <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6l-3-4Z"/><path d="M3 6h18"/></svg></span>
+            </div>
+            <div class="stat-value">18</div>
+            <div class="stat-delta up">▲ 3 đơn chờ xử lý</div>
+          </div>
+          <div class="stat-card" style="--accent:var(--green-600); --accent-soft:var(--green-100)">
+            <div class="stat-top">
+              <span class="stat-label">Sản phẩm đang bán</span>
+              <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4V7Z"/></svg></span>
+            </div>
+            <div class="stat-value">342</div>
+            <div class="stat-delta up">▲ 6 sản phẩm mới đăng</div>
+          </div>
+          <div class="stat-card" style="--accent:var(--violet-600); --accent-soft:var(--violet-100)">
+            <div class="stat-top">
+              <span class="stat-label">Khách hàng mới</span>
+              <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+            </div>
+            <div class="stat-value">27</div>
+            <div class="stat-delta up">▲ 6.1% tuần này</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Doanh thu 7 ngày gần nhất</h3>
+              <span class="badge badge-blue">Tuần này</span>
+            </div>
+            <div class="panel-body">
+              <div class="bars" id="revenueChart"></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Sản phẩm theo danh mục</h3></div>
+            <div class="panel-body">
+              <div class="donut-wrap">
+                <svg viewBox="0 0 42 42" width="150" height="150">
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#EEF1F6" stroke-width="6"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#2F6FED" stroke-width="6" stroke-dasharray="34 66" stroke-dashoffset="25" stroke-linecap="round"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#1B9C6E" stroke-width="6" stroke-dasharray="26 74" stroke-dashoffset="-9" stroke-linecap="round"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#D98A1F" stroke-width="6" stroke-dasharray="22 78" stroke-dashoffset="-35" stroke-linecap="round"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#7C5CFC" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-57" stroke-linecap="round"></circle>
+                </svg>
+                <div class="legend">
+                  <div class="legend-item"><span class="legend-dot" style="background:#2F6FED"></span>Điện thoại <b>34%</b></div>
+                  <div class="legend-item"><span class="legend-dot" style="background:#1B9C6E"></span>Laptop <b>26%</b></div>
+                  <div class="legend-item"><span class="legend-dot" style="background:#D98A1F"></span>Tai nghe - Loa <b>22%</b></div>
+                  <div class="legend-item"><span class="legend-dot" style="background:#7C5CFC"></span>Khác <b>18%</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:16px">
+          <div class="panel-head">
+            <h3>Đơn hàng gần đây</h3>
+            <a class="btn btn-outline btn-sm" data-goto="orders">Xem tất cả</a>
+          </div>
+          <table>
+            <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Sản phẩm</th><th>Tổng tiền</th><th>Trạng thái</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Mã đơn" class="mono">#DH1042</td><td data-label="Khách hàng">Nguyễn Thu Hà</td><td data-label="Sản phẩm">iPhone 12 Pro Max 128GB</td><td data-label="Tổng tiền" class="price">9.500.000₫</td><td data-label="Trạng thái"><span class="badge badge-amber">Đang giao</span></td></tr>
+              <tr><td data-label="Mã đơn" class="mono">#DH1041</td><td data-label="Khách hàng">Trần Minh Khoa</td><td data-label="Sản phẩm">Laptop Dell XPS 13</td><td data-label="Tổng tiền" class="price">12.800.000₫</td><td data-label="Trạng thái"><span class="badge badge-green">Đã giao</span></td></tr>
+              <tr><td data-label="Mã đơn" class="mono">#DH1040</td><td data-label="Khách hàng">Lê Bảo Ngọc</td><td data-label="Sản phẩm">Tai nghe Sony WH-1000XM4</td><td data-label="Tổng tiền" class="price">3.200.000₫</td><td data-label="Trạng thái"><span class="badge badge-red">Đã hủy</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= PRODUCTS (UC10 — Admin quản lý sản phẩm) ================= -->
+      <section class="page" id="page-products">
+        <div class="section-head">
+          <div>
+            <h2>Quản lý sản phẩm</h2>
+            <div class="section-sub">Thêm, sửa, xoá và cập nhật tình trạng còn hàng của sản phẩm điện tử cũ trên TheSecond.</div>
+          </div>
+          <button class="btn btn-primary" onclick="openModal('modalProduct')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Thêm sản phẩm
+          </button>
+        </div>
+        <div class="panel">
+          <div class="table-toolbar">
+            <div class="searchbox" style="width:240px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="Tìm sản phẩm..."></div>
+            <select><option>Tất cả danh mục</option><option>Điện thoại</option><option>Laptop</option><option>Tai nghe - Loa</option><option>Đồng hồ thông minh</option></select>
+            <select><option>Tất cả tồn kho</option><option>Còn hàng</option><option>Hết hàng</option><option>Ngừng bán</option></select>
+          </div>
+          <table>
+            <thead><tr><th>Sản phẩm</th><th>Danh mục</th><th>Giá</th><th>Tình trạng máy</th><th>Tồn kho</th><th>Hành động</th></tr></thead>
+            <tbody>
+              <tr>
+                <td data-label="Sản phẩm"><div class="cell-main"><div class="thumb">📱</div><div><div class="cell-title">iPhone 12 Pro Max 128GB</div><div class="cell-sub">Cập nhật 2 giờ trước</div></div></div></td>
+                <td data-label="Danh mục">Điện thoại</td>
+                <td data-label="Giá" class="price">9.500.000₫</td>
+                <td data-label="Tình trạng máy">Đã dùng ~85%</td>
+                <td data-label="Tồn kho"><span class="badge badge-green">Còn hàng</span></td>
+                <td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Sửa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger" title="Xoá"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td data-label="Sản phẩm"><div class="cell-main"><div class="thumb">💻</div><div><div class="cell-title">Laptop Dell XPS 13</div><div class="cell-sub">Cập nhật hôm qua</div></div></div></td>
+                <td data-label="Danh mục">Laptop</td>
+                <td data-label="Giá" class="price">12.800.000₫</td>
+                <td data-label="Tình trạng máy">Đã dùng ~80%</td>
+                <td data-label="Tồn kho"><span class="badge badge-green">Còn hàng</span></td>
+                <td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Sửa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger" title="Xoá"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td data-label="Sản phẩm"><div class="cell-main"><div class="thumb">🎧</div><div><div class="cell-title">Tai nghe Sony WH-1000XM4</div><div class="cell-sub">Cập nhật 3 ngày trước</div></div></div></td>
+                <td data-label="Danh mục">Tai nghe - Loa</td>
+                <td data-label="Giá" class="price">3.200.000₫</td>
+                <td data-label="Tình trạng máy">Đã dùng ~90%</td>
+                <td data-label="Tồn kho"><span class="badge badge-red">Hết hàng</span></td>
+                <td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Sửa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger" title="Xoá"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td data-label="Sản phẩm"><div class="cell-main"><div class="thumb">⌚</div><div><div class="cell-title">Apple Watch SE 40mm</div><div class="cell-sub">Cập nhật 5 ngày trước</div></div></div></td>
+                <td data-label="Danh mục">Đồng hồ thông minh</td>
+                <td data-label="Giá" class="price">4.100.000₫</td>
+                <td data-label="Tình trạng máy">Đã dùng ~88%</td>
+                <td data-label="Tồn kho"><span class="badge badge-gray">Ngừng bán</span></td>
+                <td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Sửa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger" title="Xoá"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pager"><span>Hiển thị 1–4 trong 342 sản phẩm</span><div class="pager-btns"><button class="active">1</button><button>2</button><button>3</button></div></div>
+        </div>
+      </section>
+
+      <!-- ================= CATEGORIES ================= -->
+      <section class="page" id="page-categories">
+        <div class="section-head">
+          <div><h2>Quản lý danh mục</h2><div class="section-sub">Sắp xếp các nhóm sản phẩm hiển thị trên trang chủ.</div></div>
+          <button class="btn btn-primary" onclick="openModal('modalCategory')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Thêm danh mục
+          </button>
+        </div>
+        <div class="panel">
+          <table>
+            <thead><tr><th>Danh mục</th><th>Số sản phẩm</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Danh mục"><div class="cell-main"><div class="thumb">📱</div><div class="cell-title">Điện thoại</div></div></td><td data-label="Số sản phẩm">96</td><td data-label="Trạng thái"><span class="badge badge-green">Hiển thị</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td></tr>
+              <tr><td data-label="Danh mục"><div class="cell-main"><div class="thumb">💻</div><div class="cell-title">Laptop</div></div></td><td data-label="Số sản phẩm">58</td><td data-label="Trạng thái"><span class="badge badge-green">Hiển thị</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td></tr>
+              <tr><td data-label="Danh mục"><div class="cell-main"><div class="thumb">🎧</div><div class="cell-title">Tai nghe - Loa</div></div></td><td data-label="Số sản phẩm">74</td><td data-label="Trạng thái"><span class="badge badge-green">Hiển thị</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td></tr>
+              <tr><td data-label="Danh mục"><div class="cell-main"><div class="thumb">⌚</div><div class="cell-title">Đồng hồ thông minh</div></div></td><td data-label="Số sản phẩm">39</td><td data-label="Trạng thái"><span class="badge badge-gray">Đã ẩn</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="icon-action danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= ORDERS ================= -->
+      <section class="page" id="page-orders">
+        <div class="section-head">
+          <div><h2>Quản lý đơn hàng</h2><div class="section-sub">Theo dõi và cập nhật trạng thái các đơn mua bán đồ cũ.</div></div>
+        </div>
+        <div class="panel">
+          <div class="table-toolbar">
+            <div class="searchbox" style="width:220px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="Tìm mã đơn..."></div>
+            <select><option>Tất cả trạng thái</option><option>Chờ xác nhận</option><option>Đang giao</option><option>Đã giao</option><option>Đã hủy</option></select>
+          </div>
+          <table>
+            <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Sản phẩm</th><th>Tổng tiền</th><th>Ngày đặt</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Mã đơn" class="mono">#DH1042</td><td data-label="Khách hàng">Nguyễn Thu Hà</td><td data-label="Sản phẩm">iPhone 12 Pro Max 128GB</td><td data-label="Tổng tiền" class="price">9.500.000₫</td><td data-label="Ngày đặt">12/08/2026</td><td data-label="Trạng thái"><span class="badge badge-amber">Đang giao</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem chi tiết"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>
+              <tr><td data-label="Mã đơn" class="mono">#DH1041</td><td data-label="Khách hàng">Trần Minh Khoa</td><td data-label="Sản phẩm">Laptop Dell XPS 13</td><td data-label="Tổng tiền" class="price">12.800.000₫</td><td data-label="Ngày đặt">11/08/2026</td><td data-label="Trạng thái"><span class="badge badge-green">Đã giao</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem chi tiết"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>
+              <tr><td data-label="Mã đơn" class="mono">#DH1040</td><td data-label="Khách hàng">Lê Bảo Ngọc</td><td data-label="Sản phẩm">Tai nghe Sony WH-1000XM4</td><td data-label="Tổng tiền" class="price">3.200.000₫</td><td data-label="Ngày đặt">10/08/2026</td><td data-label="Trạng thái"><span class="badge badge-red">Đã hủy</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem chi tiết"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>
+              <tr><td data-label="Mã đơn" class="mono">#DH1039</td><td data-label="Khách hàng">Phạm Gia Huy</td><td data-label="Sản phẩm">Loa Bluetooth JBL Flip 5</td><td data-label="Tổng tiền" class="price">950.000₫</td><td data-label="Ngày đặt">09/08/2026</td><td data-label="Trạng thái"><span class="badge badge-blue">Chờ xác nhận</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xác nhận đơn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></button><button class="icon-action" title="Xem chi tiết"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= CUSTOMERS (UC13 — Admin quản lý khách hàng) ================= -->
+      <section class="page" id="page-customers">
+        <div class="section-head">
+          <div><h2>Quản lý khách hàng</h2><div class="section-sub">Xem danh sách khách hàng, thông tin tài khoản, lịch sử mua hàng và khoá/mở khoá tài khoản khi cần.</div></div>
+        </div>
+        <div class="panel">
+          <div class="table-toolbar">
+            <div class="searchbox" style="width:220px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="Tìm khách hàng..."></div>
+            <select><option>Tất cả trạng thái</option><option>Hoạt động</option><option>Đã khoá</option></select>
+          </div>
+          <table>
+            <thead><tr><th>Khách hàng</th><th>Email</th><th>Lịch sử mua hàng</th><th>Ngày tham gia</th><th>Trạng thái</th><th>Hành động</th></tr></thead>
+            <tbody>
+              <tr><td data-label="Khách hàng"><div class="cell-main"><div class="avatar" style="width:32px;height:32px;font-size:11px">TH</div><div class="cell-title">Nguyễn Thu Hà</div></div></td><td data-label="Email">thuha@gmail.com</td><td data-label="Lịch sử mua hàng">5 đơn hàng</td><td data-label="Ngày tham gia">02/03/2026</td><td data-label="Trạng thái"><span class="badge badge-green">Hoạt động</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem lịch sử mua hàng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="icon-action danger" title="Khoá tài khoản"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></button></div></td></tr>
+              <tr><td data-label="Khách hàng"><div class="cell-main"><div class="avatar" style="width:32px;height:32px;font-size:11px">MK</div><div class="cell-title">Trần Minh Khoa</div></div></td><td data-label="Email">minhkhoa@gmail.com</td><td data-label="Lịch sử mua hàng">12 đơn hàng</td><td data-label="Ngày tham gia">14/01/2026</td><td data-label="Trạng thái"><span class="badge badge-green">Hoạt động</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem lịch sử mua hàng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="icon-action danger" title="Khoá tài khoản"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></button></div></td></tr>
+              <tr><td data-label="Khách hàng"><div class="cell-main"><div class="avatar" style="width:32px;height:32px;font-size:11px">BN</div><div class="cell-title">Lê Bảo Ngọc</div></div></td><td data-label="Email">baongoc@gmail.com</td><td data-label="Lịch sử mua hàng">3 đơn hàng</td><td data-label="Ngày tham gia">05/05/2026</td><td data-label="Trạng thái"><span class="badge badge-green">Hoạt động</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem lịch sử mua hàng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="icon-action danger" title="Khoá tài khoản"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></button></div></td></tr>
+              <tr><td data-label="Khách hàng"><div class="cell-main"><div class="avatar" style="width:32px;height:32px;font-size:11px">GH</div><div class="cell-title">Phạm Gia Huy</div></div></td><td data-label="Email">giahuy@gmail.com</td><td data-label="Lịch sử mua hàng">0 đơn hàng</td><td data-label="Ngày tham gia">28/06/2026</td><td data-label="Trạng thái"><span class="badge badge-red">Đã khoá</span></td><td data-label="Hành động"><div class="row-actions"><button class="icon-action" title="Xem lịch sử mua hàng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="icon-action" title="Mở khoá tài khoản"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 7-3.5"/></svg></button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= STATISTICS ================= -->
+      <section class="page" id="page-stats">
+        <div class="section-head">
+          <div><h2>Thống kê</h2><div class="section-sub">Tổng quan hiệu suất kinh doanh theo thời gian.</div></div>
+          <select style="padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:12.5px"><option>30 ngày qua</option><option>Quý này</option><option>Năm nay</option></select>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-card" style="--accent:var(--blue-600); --accent-soft:var(--blue-100)"><div class="stat-label">Tổng doanh thu</div><div class="stat-value">86.4tr₫</div><div class="stat-delta up">▲ 18% so với tháng trước</div></div>
+          <div class="stat-card" style="--accent:var(--green-600); --accent-soft:var(--green-100)"><div class="stat-label">Tổng đơn hàng</div><div class="stat-value">512</div><div class="stat-delta up">▲ 9% so với tháng trước</div></div>
+          <div class="stat-card" style="--accent:var(--amber-600); --accent-soft:var(--amber-100)"><div class="stat-label">Sản phẩm đã bán</div><div class="stat-value">143</div><div class="stat-delta up">▲ 11% so với tháng trước</div></div>
+          <div class="stat-card" style="--accent:var(--violet-600); --accent-soft:var(--violet-100)"><div class="stat-label">Khách hàng mới</div><div class="stat-value">27</div><div class="stat-delta up">▲ 6.1% so với tháng trước</div></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Doanh thu theo tháng (6 tháng gần nhất)</h3></div>
+          <div class="panel-body"><div class="bars" id="statsChart"></div></div>
+        </div>
+
+        <div class="grid-2" style="margin-top:16px">
+          <div class="panel">
+            <div class="panel-head"><h3>Sản phẩm bán chạy nhất</h3></div>
+            <table>
+              <thead><tr><th>Sản phẩm</th><th>Đã bán</th><th>Doanh thu</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Sản phẩm">iPhone 12 Pro Max</td><td data-label="Đã bán">24</td><td data-label="Doanh thu" class="price">228tr₫</td></tr>
+                <tr><td data-label="Sản phẩm">Tai nghe Sony WH-1000XM4</td><td data-label="Đã bán">41</td><td data-label="Doanh thu" class="price">131tr₫</td></tr>
+                <tr><td data-label="Sản phẩm">Loa Bluetooth JBL Flip 5</td><td data-label="Đã bán">58</td><td data-label="Doanh thu" class="price">55tr₫</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Tỉ lệ danh mục bán ra</h3></div>
+            <div class="panel-body">
+              <div class="donut-wrap" style="justify-content:center">
+                <svg viewBox="0 0 42 42" width="160" height="160">
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#EEF1F6" stroke-width="6"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#2F6FED" stroke-width="6" stroke-dasharray="40 60" stroke-dashoffset="25" stroke-linecap="round"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#1B9C6E" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="-15" stroke-linecap="round"></circle>
+                  <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#D98A1F" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="-45" stroke-linecap="round"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= FOOTER (dùng chung toàn site) ================= -->
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="brand-mark">TS</div>
+        © 2026 TheSecond — Đồ án Lập trình Web, Nhóm 012012103104
+      </div>
+      <div class="footer-links">
+        <a href="#">Trợ giúp</a>
+        <a href="#">Chính sách</a>
+        <a href="#">Liên hệ</a>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ============ MODAL: Thêm sản phẩm ============ -->
+<div class="overlay" id="modalProduct">
+  <div class="modal">
+    <div class="modal-head"><h3>Thêm sản phẩm</h3><button class="modal-close" onclick="closeModal('modalProduct')">✕</button></div>
+    <div class="modal-body">
+      <div class="field"><label>Tên sản phẩm</label><input type="text" placeholder="VD: iPhone 12 Pro Max 128GB"></div>
+      <div class="field-row">
+        <div class="field"><label>Danh mục</label><select><option>Điện thoại</option><option>Laptop</option><option>Tai nghe - Loa</option><option>Đồng hồ thông minh</option></select></div>
+        <div class="field"><label>Giá bán (đ)</label><input type="number" placeholder="0"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Tình trạng máy</label><input type="text" placeholder="VD: Đã dùng ~85%"></div>
+        <div class="field"><label>Tồn kho</label><select><option>Còn hàng</option><option>Hết hàng</option><option>Ngừng bán</option></select></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('modalProduct')">Huỷ</button>
+      <button class="btn btn-primary" onclick="closeModal('modalProduct')">Lưu sản phẩm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: Thêm danh mục ============ -->
+<div class="overlay" id="modalCategory">
+  <div class="modal">
+    <div class="modal-head"><h3>Thêm danh mục</h3><button class="modal-close" onclick="closeModal('modalCategory')">✕</button></div>
+    <div class="modal-body">
+      <div class="field"><label>Tên danh mục</label><input type="text" placeholder="VD: Máy tính bảng"></div>
+      <div class="field"><label>Trạng thái hiển thị</label><select><option>Hiển thị</option><option>Ẩn</option></select></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" onclick="closeModal('modalCategory')">Huỷ</button>
+      <button class="btn btn-primary" onclick="closeModal('modalCategory')">Lưu danh mục</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
